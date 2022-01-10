@@ -1,0 +1,26 @@
+@use 'vars';
+.landing {
+  height: calc(100vh - 64px);
+  background-image: url(../images/head-bg.jpeg);
+  background-size: cover;
+  position: relative;
+  .text {
+    position: absolute;
+    width: 320px;
+    max-width: 100%;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    h1 {
+      color: vars.$main-color;
+      text-align: center;
+      font-width: bold;
+      font-size: 50px;
+    }
+    p {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+  }
+}

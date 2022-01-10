@@ -1,0 +1,29 @@
+@use 'vars';
+.portfolio {
+  padding-top: vars.$section-padding;
+  padding-bottom: vars.$section-padding;
+  background-color: vars.$section-background;
+  .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+    .card {
+      background-color: white;
+      img {
+        width: 100%;
+      }
+      .info {
+        padding: 20px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          margin-bottom: 0;
+          color: #777;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

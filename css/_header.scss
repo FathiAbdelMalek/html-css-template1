@@ -1,0 +1,73 @@
+@use 'vars';
+@import 'imports';
+header {
+  padding: 20px;
+  .container {
+    @include flex-parent(row, nowrap, space-between, center);
+    .logo {
+      width: 60px;
+    }
+    .links {
+      position: relative;
+      &:hover {
+        .icon span:nth-child(2) {
+          width: 100%;
+        }
+        ul {
+          display: block;
+        }
+      }
+      .icon {
+        @include flex-parent(row, wrap, flex-end, normal);
+        width: 30px;
+        span {
+          background-color: #333;
+          width: 100%;
+          height: 2px;
+          margin-bottom: 5px;
+          &:nth-child(2) {
+            width: 70%;
+            transition: vars.$main-duration;
+          }
+        }
+      }
+      ul {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        top: calc(100% + 15px);
+        background-color: vars.$section-background;
+        position: absolute;
+        min-width: 200px;
+        transition: vars.$main-duration;
+        z-index: 1;
+        &::before {
+          content: "";
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent vars.$section-background transparent;
+          position: absolute;
+          right: 5px;
+          top: -20px;
+        }
+        li {
+          &:not(:last-child) a {
+            border-bottom: 1px solid #ddd;
+          }
+          a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            transition: vars.$main-duration;
+            &:hover {
+              padding-left: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
